@@ -1,0 +1,47 @@
+local aimbot_enabled = true
+local aimbot_keybind = 'E'
+local aimbot_smoothing = 0.5
+
+local fov_radius = 200
+local prediction = 0.1377
+local auto_prediction = true
+local visible_check = true
+
+function Aimbot()
+    if aimbot_enabled then
+        if IsKeyJustPressed(aimbot_keybind) then
+            local target = FindTarget()
+            if target then
+                local aim_position = CalculateAimPosition(target)
+                MoveMouseSmoothly(aim_position)
+            end
+        end
+    end
+end
+
+function IsKeyJustPressed(key)
+    -- Function to check if the key is just pressed
+end
+
+function FindTarget()
+    -- Function to find the target within the FOV radius
+end
+
+function CalculateAimPosition(target)
+    -- Function to calculate the aim position based on target's position
+end
+
+function MoveMouseSmoothly(position)
+    -- Function to smoothly move the mouse to the given position
+end
+
+function MainLoop()
+    while true do
+        Aimbot()
+        wait(1) -- Delay to reduce CPU usage
+    end
+end
+
+MainLoop()
+
+print("《★~ Endo~★ 》")
